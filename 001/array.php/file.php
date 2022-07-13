@@ -1,3 +1,4 @@
 <?php
-// $name = 'nguyen van a';
-echo name
+$name = 'nguyen van a';
+echo $name;
+?>
