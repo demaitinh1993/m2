@@ -22,5 +22,22 @@ $arr=[1,5,8,4,2,6];
 echo "<pre>";
 print_r(selectionSort($arr));
 
+$string = " CodeGym_Viet_Nam ";
+$trim_string = trim($string, " ");
+$index = stripos($trim_string, "_");
+$sub_string = substr($trim_string, 0, $index);
+echo "$sub_string";
+echo "<br>";
+echo "$trim_string";
+echo "<br>";
+echo "$index";
+
+$subject = "CodeGym@gmail.com";
+$pattern = '/^\w+@\w+(\.\w+){1,3}$/';
+if (preg_match($pattern, $subject, $matches)) {
+    echo 'Khớp';
+} else {
+    echo 'Không khớp';
+};
 
 ?>

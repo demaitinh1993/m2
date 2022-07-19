@@ -10,17 +10,17 @@
                                 Home
                             </a>
                             <!-- <div class="sb-sidenav-menu-heading">Interface</div> -->
-                            <a class="nav-link collapsed" href="/du_an/admin/categories/index.php">
+                            <a class="nav-link collapsed" href="../categories/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Categories
                             </a>
-                            <a class="nav-link collapsed" href="/du_an/admin/product/index.php">
+                            <a class="nav-link collapsed" href="../product/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Products
-                            </a><a class="nav-link collapsed" href="/du_an/admin/customers/index.php" >
+                            </a><a class="nav-link collapsed" href="../customers/index.php" >
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Customers
-                            </a><a class="nav-link collapsed" href="/du_an/admin/orders/index.php">
+                            </a><a class="nav-link collapsed" href="../orders/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 orders
                             </a>

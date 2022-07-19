@@ -42,11 +42,11 @@ $rows = $stmt->fetchAll();
 
 					<div class="product-item <?php echo $item->breed ?>">
 						<div class="product discount product_filter">
-							<div class="product_image">
+							<div class="product_image h-10">
 								<img src="../admin/public/img/<?php echo $item->image ?>" alt="">
 							</div>
-							<div class="favorite favorite_left"></div>
-							<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+							<!-- <div class="favorite favorite_left"></div> -->
+							<!-- <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"></div> -->
 							<div class="product_info">
 								<h6 class="product_iname"><a href="single.html"><?php echo $item->name; ?></a></h6>
 								<div class="product_price">$<?php echo $item->price; ?></div>
@@ -60,7 +60,14 @@ $rows = $stmt->fetchAll();
 		</div>
 	</div>
 </div>
-
+<style>
+	.product-item{
+		height: 230px;
+	}
+	.product {
+		height: 180px;
+	}
+	</style>
 <?php
 include './layout/footer.php';
 ?>

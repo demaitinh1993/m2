@@ -114,3 +114,11 @@
 
     border: 1px solid transparent;
 }
+
+.product {
+    height: 205px;
+}
+.product-item {
+    width: 33.333333333333%;
+    height: 215px;
+}

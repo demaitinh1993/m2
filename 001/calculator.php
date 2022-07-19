@@ -12,19 +12,28 @@
         $number_1=$_POST['so1'];
         $number_2=$_POST['so2'];
         $tinh=$_POST['tinhtoan'];
+        
+
+        if($number_1==""||$number_2==""){
+            echo "bạn cần nhập đủ 2 số để thực hiện phép tính";
+        }else{
         $tong=$number_1+$number_2;
         $hieu=$number_1-$number_2;
         $tich=$number_1*$number_2;
-        $thuong=$number_1/$number_2;
-
-        if($tinh=='cong'){
-            echo $number_1.'+'.$number_2.'='.$tong;
-        }else if($tinh=='tru'){
-            echo $number_1.'-'.$number_2.'='.$hieu;
-        }else if($tinh=='nhan'){
-            echo $number_1.'*'.$number_2.'='.$tich;
-        }else if($tinh=='chia'){
-            echo $number_1.'/'.$number_2.'='.$thuong;
+            if($tinh=='cong'){
+                echo $number_1.'+'.$number_2.'='.$tong;
+            }else if($tinh=='tru'){
+                echo $number_1.'-'.$number_2.'='.$hieu;
+            }else if($tinh=='nhan'){
+                echo $number_1.'*'.$number_2.'='.$tich;
+            }else if($tinh=='chia'){
+                if($number_2==0){
+                    echo "mẫu số phải khác 0";
+                }else{
+                    $thuong=$number_1/$number_2;
+                    echo $number_1.'/'.$number_2.'='.$thuong;
+                }
+            }
         }
         
     }

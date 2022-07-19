@@ -17,21 +17,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $price = $_REQUEST['price'];
     $img = $_REQUEST['img'];
     $errors = [];
-    if ($name==''){
-        $errors['name']="You need to enter your name";
-    }if ($age==''){
-        $errors['age']="You need to enter your age";
-    }if ($color==''){
-        $errors['color']="You need to enter your color";
-    }if ($breed==''){
-        $errors['breed']="You need to enter your breed";
-    }if ($gender==''){
-        $errors['gender']="You need to enter your gender";
-    }if ($price==''){
-        $errors['price']="You need to enter your lại price";
-    }if ($img==''){
-        $errors['img']="You need to enter your lại img";
+    $fields= ['name','age','color','breed','price','img'];
+    foreach($fields as $field){
+        if(empty($_POST[$field])){
+            $errors [$field] = "You need to enter your ".$field;
+        }
     }
+
+    // if ($name==''){
+    //     $errors['name']="You need to enter your name";
+    // }if ($age==''){
+    //     $errors['age']="You need to enter your age";
+    // }if ($color==''){
+    //     $errors['color']="You need to enter your color";
+    // }if ($breed==''){
+    //     $errors['breed']="You need to enter your breed";
+    // }if ($gender==''){
+    //     $errors['gender']="You need to enter your gender";
+    // }if ($price==''){
+    //     $errors['price']="You need to enter your lại price";
+    // }if ($img==''){
+    //     $errors['img']="You need to enter your lại img";
+    // }
     if (empty($errors)) {
         $sql = "INSERT INTO products  (name,age,color,breed,gender,price,image) VALUES ('$name', '$age', '$color', '$breed', '$gender', '$price','$img')";
         $conn->query($sql);
