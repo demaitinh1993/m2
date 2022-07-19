@@ -44,14 +44,16 @@
     if($_SERVER['REQUEST_METHOD']=="POST"){
             $nhap=$_REQUEST['search'];
                 switch($nhap){
-                    case $nhap<10 && $nhap>=0: 
+                    case $nhap<10 && $nhap>0: 
                         echo $number[$nhap];
                         break;
                     case $nhap>=10 && $nhap<16:
                         echo $hangcam[$nhap];
+                        break;
                     case $nhap>=16 && $nhap<=19:
                         $chuc=$nhap-10;
                         echo $number[$chuc]."teen";
+                        break;
                     case $nhap<100:
                         $chuc=(int)($nhap/10)*10;
                         $donvi=$nhap-$chuc;
@@ -64,6 +66,8 @@
                         $donvi=$nhap-($hangtram*100)-$hangchuc1;
                         if($hangchuc2<10){
                             echo $number[$hangtram]."hundred"."-".$number[$donvi];
+                        }else if($hangchuc2>10 && $hangchuc2<15){
+                            
                         }else if($donvi==0){
                             echo $number[$hangtram]."hundred"."-".$hangchuc[$hangchuc1];
                         }
