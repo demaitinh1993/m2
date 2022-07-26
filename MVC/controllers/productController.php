@@ -20,4 +20,5 @@ class productController {
         echo __METHOD__;
         include_once 'views/products/delete.php';
     }
+
 }

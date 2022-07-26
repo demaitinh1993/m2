@@ -16,18 +16,10 @@ class EmployeeManager
     {
         return $this->Employee;
     }
-    // static function getEmployee1(): array///in ra danh sách nhân sự
-    // {
-
-    //     return self::$ds;
-    // }
-
+  
     public function find($id)
     {
         return $this->Employee[$id];
     }
-    // public function show($id)
-    // {
-    //     return $this->Employee[$id];
-    // }
+
 }

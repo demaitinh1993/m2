@@ -62,14 +62,14 @@ switch ($action) {
         //goi phuong thuc tuong ung
         $objController->delete();
         break;
-    case 'login':
-        //goi phuong thuc tuong ung
-        $objController->login();
-        break;
-    case 'register':
-        //goi phuong thuc tuong ung
-        $objController->register();
-        break;
+    // case 'login':
+    //     //goi phuong thuc tuong ung
+    //     $objController->login();
+    //     break;
+    // case 'register':
+    //     //goi phuong thuc tuong ung
+    //     $objController->register();
+    //     break;
     default:
         # code...
         break;
