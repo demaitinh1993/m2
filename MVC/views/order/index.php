@@ -14,7 +14,6 @@
             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
 </div>
 
-
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
