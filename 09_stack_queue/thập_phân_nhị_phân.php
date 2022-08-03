@@ -77,6 +77,6 @@ echo "<br>";
 // $array= str_split($str);
 // print_r($array);
 
-print_r($stack->Binary_Decimal(1010000));
+print_r($stack->Binary_Decimal(101000));
 
 ?>
