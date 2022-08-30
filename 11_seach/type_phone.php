@@ -49,13 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     
     }
-    // echo "<pre>";
-    // print_r($vina);
-    
-    // echo "<br>";
-    // print_r($mobifone);
-    // echo "<br>";
-    // print_r($vina);
+
 
 }
 ?>
@@ -73,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
     <form action="" method="post">
-        <td>Nhập các số điện thoại và cách nhau bỡi khoảng trắng</td><br>
+        <td>Nhập các số điện thoại và cách nhau bởi khoảng trắng</td><br>
         <textarea name="phone" placeholder="Nhập số điện thoại vào đây"></textarea><br>
         <input type="submit">
     </form>
@@ -83,25 +77,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </html>
 <?php
 echo"Những số Viettel<br>";
-  foreach($viettel as $key=>$val){
-    foreach($viettel[$key] as $k=>$v){
-        echo $v;
-      }
-      echo"<br>";
-  }
+if(isset($viettel)){
+
+    foreach($viettel as $key=>$val){
+      foreach($viettel[$key] as $k=>$v){
+          echo $v;
+        }
+        echo"<br>";
+    }
+}
   echo"Những số Mobifone <br>";
-  foreach($mobifone as $key=>$val){
-    foreach($mobifone[$key] as $k=>$v){
-        echo $v;
+  if(isset($mobifone)){
+
+      foreach($mobifone as $key=>$val){
+        foreach($mobifone[$key] as $k=>$v){
+            echo $v;
+          }
+          echo"<br>";
       }
-      echo"<br>";
-  }
+}
   echo"Những số Vina <br>";
-  foreach($vina as $key=>$val){
-    foreach($vina[$key] as $k=>$v){
-        echo $v;
+  if(isset($vina)){
+
+      foreach($vina as $key=>$val){
+        foreach($vina[$key] as $k=>$v){
+            echo $v;
+          }
+          echo"<br>";
       }
-      echo"<br>";
-  }
+}
 
 ?>

@@ -28,10 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 throw new Exception("Tên người dùng không được chứa kí tự đặc biệt!");
             }
             if (preg_match($pattern_2, $account)) {
-                throw new Exception("Tên người dùng phải có ít nhất 6 kí tự!");
+                throw new Exception2("Tên người dùng phải có ít nhất 6 kí tự!");
             }
             if (preg_match($pattern_3, $account)) {
-                throw new Exception("Tên người dùng không được viết hoa!");
+                throw new Exception3("Tên người dùng không được viết hoa!");
             }
         } catch (Exception $e) {
             echo $e->getMessage();

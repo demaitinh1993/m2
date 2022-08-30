@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row{display: flex; flex-wrap: wrap;}
+        .col-12 {width: 100%;}
+        .col-6{width: 50%;}
+        .col-4{width: 33.3%;}
+        
+        .bg-red{background-color: red;}
+        .bg-yellow{background-color: yellow;}
+        .bg-blue{background-color: blue;}
+        .text-center{text-align: center;}
+/*
+nếu màn hình hiển thị giảm xuống dưới 600px thì các khối sẽ thay đổi kick thước 
+*/
+        @media all and (max-width: 400px)
+        {
+            .col-6{width:100%;}
+            .col-4{width:100%;}
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class ="row">
+        <div class="col-12 bg-red text-center">COL 12</div>
+    </div>
+    <div class ="row">
+        <div class="col-6 bg-yellow text-center">COL 6</div>
+        <div class="col-6 bg-blue text-center">COL 6</div>
+    </div>
+    <div class ="row">
+        <div class="col-6 bg-blue text-center">COL 6</div>
+        <div class="col-6 bg-yellow text-center">COL 6</div>
+    </div>
+    <div class ="row">
+        <div class="col-12 bg-red text-center">COL 12</div>
+    </div>
+    <div class ="row">
+        <div class="col-4 bg-yellow text-center">COL 4</div>
+        <div class="col-4 bg-blue text-center">COL 4</div>
+        <div class="col-4 bg-yellow text-center">COL 4</div>
+    </div>
+
+
+
+</body>
+</html>

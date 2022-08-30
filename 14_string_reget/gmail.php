@@ -1,7 +1,5 @@
 <?php
-if($_SERVER['REQUEST_METHOD']=='POST')
-{
-    $email=$_POST['email'];
+
    
 ?>
 
@@ -28,6 +26,10 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 
 </html>
 <?php
+if($_SERVER['REQUEST_METHOD']=='POST')
+{
+    $email=$_POST['email'];
+    
  class  Exception2 extends Exception
  {
      public function Message()
