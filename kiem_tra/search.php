@@ -4,7 +4,7 @@ if(isset($_REQUEST['search'])){
 $search=$_REQUEST['search'];
 // print_r($search);
 // die();
-$sql="SELECT students.Ten_hoc_sinh, class.ten_lop FROM students JOIN class ON students.Lop=class.id 
+$sql="SELECT students.*, class.ten_lop FROM students JOIN class ON students.Lop=class.id 
 WHERE students.Ten_hoc_sinh LIKE '$search' OR class.ten_lop LIKE '$search'";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
@@ -66,8 +66,8 @@ $rows = $stmt->fetchAll();
                                 <td><?php echo $item->Ten_hoc_sinh; ?></td>
                                 <td><?php echo $item->ten_lop; ?></td>
                                <td width="250px" >
-                                    <a class="btn btn-success" href="edit.php?id=<?php echo $item->Ma_hoc_sinh; ?>">Edit</a>
-                                    <a class="btn btn-danger" href="delete.php?id=<?php echo $item->Ma_hoc_sinh; ?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
+                               <a class="btn btn-success" href="edit.php?id=<?php echo $item->Ma_hoc_sinh; ?>">Chỉnh sửa</a>
+                                    <a class="btn btn-danger" href="delete.php?id=<?php echo $item->Ma_hoc_sinh; ?>" onclick="return confirm('Bạn có chắc muốn xóa <?php echo $item->Ten_hoc_sinh; ?> không?');">Xóa</a>
                                 </td>
                             </tr>
                         </tbody>
