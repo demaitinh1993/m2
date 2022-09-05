@@ -5,7 +5,7 @@ $search=$_REQUEST['search'];
 // print_r($search);
 // die();
 $sql="SELECT students.*, class.ten_lop FROM students JOIN class ON students.Lop=class.id 
-WHERE students.Ten_hoc_sinh LIKE '$search' OR class.ten_lop LIKE '$search'";
+WHERE students.Ten_hoc_sinh LIKE '%$search%' OR class.ten_lop LIKE '%$search%'";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 //fetchALL se tra ve du lieu nhieu hon 1 ket qua
