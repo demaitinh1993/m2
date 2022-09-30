@@ -13,7 +13,7 @@ class LinkerList
 {
     public $head=null;
     public $tail=null;
-
+    public $count=0;
     public function addFirst($data){
         $newNode= new Node($data);
         $newNode->next=$this->head;
@@ -21,6 +21,7 @@ class LinkerList
         if(!$this->tail){
             $this->tail=$newNode;
         }
+        $this->count++;
     }
     public function addLast($data){
         $newNode=new Node($data);
@@ -31,6 +32,8 @@ class LinkerList
             $this->tail->next=$newNode;
             $this->tail=$newNode;
         }
+        $this->count++;
+
     }
     public function removeFirst(){
         if($this->head!==null){
@@ -84,6 +87,74 @@ class LinkerList
             $currentNode = $currentNode->next;
         }
     }
+     //xóa 1 node dựa vào key (nhập vào giá trị node)
+     public function deleteNode($key)
+     {
+         $current = $this->head;
+         $previous = $this->head;
+ 
+         while ($current->data != $key) {
+             if ($current->next == NULL)
+                 return NULL;
+             else {
+                 $previous = $current;
+                 $current = $current->next;
+             }
+         }
+ 
+         if ($current == $this->head) {
+             if ($this->count == 1) {
+                 $this->tail = $this->head;
+             }
+             $this->head = $this->head->next;
+         } else {
+             if ($this->tail == $current) {
+                 $this->tail = $previous;
+             }
+             $previous->next = $current->next;
+         }
+         $this->count--;
+     }
+     /////trả về tổng số node
+     public function totalNodes()
+    {
+        return $this->count;
+    }
+    public function emptyList()
+    {
+        $this->head = NULL;
+
+    }
+    //////////chèn 1 dữ liệu data vào vị trí thứ key
+    public function insert($data, $key)
+    {
+        if ($key == 0) {
+            $this->addFirst($data);
+        } else {
+            $link = new Node($data);
+            $current = $this->head;
+            $previous = $this->head;
+
+            for ($i = 0; $i < $key; $i++) {
+                $previous = $current;
+                $current = $current->next;
+            }
+            $link->next = $current;
+            $previous->next = $link;
+            $this->count++;
+        }
+    }
+    public function find($key)
+    {
+        $current = $this->head;
+        while ($current->data != $key) {
+            if ($current->next == NULL)
+                return null;
+            else
+                $current = $current->next;
+        }
+        return $current;
+    }
 
 }
 $list= new LinkerList;
@@ -99,12 +170,19 @@ echo "<br>";
 $list->removeFirst();
 $list->getList();
 echo "<br>";
-// $list->getList();
+// // $list->getList();
 $list->removeLast();
 echo "<br>";
 $list->getList();
+// // echo "<br>";
+// // print_r($list->getFirst()) ;
 echo "<br>";
-print_r($list->getFirst()) ;
-
+echo($list->totalNodes());
+echo "<br>";
+$list->deleteNode('cuong');
+$list->getList();
+echo "<br>";
+$list->insert("cuong", 1);
+$list->getList();
 
 ?>

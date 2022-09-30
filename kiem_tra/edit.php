@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <div class="mb-3">
                 <label for="disabledTextInput" class="form-label">Thông tin sinh viên</label>
-                <input type="text" name="info" id="" class="form-control" placeholder="" value="<?=$rows->Thong_tin; ?>">
+                <textarea type="text" name="info" id="" class="form-control" placeholder=""><?=$rows->Thong_tin; ?></textarea>
                 <span><?php if (isset($errors['info'])) {
                             echo $errors['info'];
                         }
